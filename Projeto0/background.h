@@ -4,6 +4,8 @@
 #include "rgb.h"
 #include <vector>
 
+using real_type = float;
+
 class BackgroundColor {
   private:
     /// Each corner has a color associated with.
