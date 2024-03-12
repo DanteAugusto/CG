@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 #include "lodepng.h"
-
+#include "rgb.h"
 using byte = unsigned char;
 
 float lerp(float a, float b, float t){return ((1-t)*a + t*b);}
@@ -14,11 +14,6 @@ void encodeOneStep(const char* filename, std::vector<unsigned char>& image, unsi
   if(error) std::cout << "encoder error " << error << ": "<< lodepng_error_text(error) << std::endl;
 }
 
-struct RGB {
-    byte r = 0;
-    byte g = 0;
-    byte b = 0;
-};
 int w = 400;
 int h = 200;
 
