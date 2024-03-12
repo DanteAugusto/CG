@@ -9,7 +9,10 @@ RGB BackgroundColor::lerp( const RGB &A, const RGB &B, float t ) const{
   float bg = (float)B.g;
   float bb = (float)B.b;
 
-  RGB retorno = (int)(((1-t)*ar + t*br)),(int)((1-t)*ag + t*bg),(int)((1-t)*ab + t*bb);
+  RGB retorno = {(int)(((1-t)*ar + t*br)),(int)((1-t)*ag + t*bg),(int)((1-t)*ab + t*bb)};
   return retorno;
+}
+RGB BackgroundColor::sampleUV( real_type u, real_type v ) const{
+  return lerp(lerp(corners[tl],corners[tr],u),lerp(corners[bl],corners[br],u),v);
 }
 
